@@ -1,16 +1,16 @@
 import { BookOpen, GraduationCap, Headphones, BookMarked, Film, Palette, Video, FileText, Zap } from "lucide-react";
 import AccessCard from "@/components/AccessCard";
 import logo from "@/assets/logo.png";
-import book1 from "@/assets/book1.webp";
-import book2 from "@/assets/book2.webp";
-import book3 from "@/assets/book3.png";
-import book4 from "@/assets/book4.webp";
-import book5 from "@/assets/book5.webp";
-import book6 from "@/assets/book6.webp";
-import book7 from "@/assets/book7.webp";
-import book8 from "@/assets/book8.webp";
-import book9 from "@/assets/book9.webp";
-import book10 from "@/assets/book10.webp";
+import book11 from "@/assets/book11.webp";
+import book13 from "@/assets/book13.webp";
+import book14 from "@/assets/book14.webp";
+import book15 from "@/assets/book15.webp";
+import book16 from "@/assets/book16.webp";
+import book17 from "@/assets/book17.webp";
+import book18 from "@/assets/book18.webp";
+import book19 from "@/assets/book19.webp";
+import book20 from "@/assets/book20.webp";
+import book21 from "@/assets/book21.webp";
 
 const Index = () => {
   const accessItems = [
@@ -83,15 +83,41 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <header className="relative overflow-hidden bg-foreground py-12 px-4 sm:py-16">
-        {/* Book Covers Background */}
+        {/* Book Covers Background - Messy Layout */}
         <div className="absolute inset-0 opacity-10">
-          <div className="grid grid-cols-5 md:grid-cols-10 gap-4 p-4">
-            {[book1, book2, book3, book4, book5, book6, book7, book8, book9, book10, book1, book2, book3, book4, book5].map((book, idx) => (
+          <div className="relative w-full h-full">
+            {[
+              { src: book11, top: '5%', left: '2%', rotate: '-8deg', scale: 0.9 },
+              { src: book13, top: '15%', left: '15%', rotate: '12deg', scale: 1.1 },
+              { src: book14, top: '8%', left: '28%', rotate: '-5deg', scale: 0.95 },
+              { src: book15, top: '20%', left: '42%', rotate: '7deg', scale: 1.05 },
+              { src: book16, top: '10%', left: '55%', rotate: '-10deg', scale: 0.85 },
+              { src: book17, top: '18%', left: '68%', rotate: '15deg', scale: 1 },
+              { src: book18, top: '5%', left: '80%', rotate: '-12deg', scale: 0.9 },
+              { src: book19, top: '50%', left: '5%', rotate: '9deg', scale: 1.05 },
+              { src: book20, top: '55%', left: '20%', rotate: '-7deg', scale: 0.95 },
+              { src: book21, top: '48%', left: '35%', rotate: '11deg', scale: 1 },
+              { src: book11, top: '60%', left: '50%', rotate: '-15deg', scale: 0.9 },
+              { src: book13, top: '52%', left: '65%', rotate: '6deg', scale: 1.1 },
+              { src: book14, top: '58%', left: '78%', rotate: '-9deg', scale: 0.85 },
+              { src: book15, top: '35%', left: '10%', rotate: '13deg', scale: 0.95 },
+              { src: book16, top: '38%', left: '25%', rotate: '-11deg', scale: 1.05 },
+              { src: book17, top: '32%', left: '72%', rotate: '8deg', scale: 0.9 },
+              { src: book18, top: '42%', left: '88%', rotate: '-6deg', scale: 1 },
+              { src: book19, top: '75%', left: '8%', rotate: '10deg', scale: 0.95 },
+              { src: book20, top: '78%', left: '30%', rotate: '-13deg', scale: 1.05 },
+              { src: book21, top: '72%', left: '55%', rotate: '7deg', scale: 0.9 },
+            ].map((book, idx) => (
               <img 
                 key={idx}
-                src={book} 
+                src={book.src} 
                 alt="" 
-                className="w-full h-32 object-cover rounded shadow-lg"
+                className="absolute w-32 h-48 object-cover rounded shadow-2xl"
+                style={{
+                  top: book.top,
+                  left: book.left,
+                  transform: `rotate(${book.rotate}) scale(${book.scale})`,
+                }}
               />
             ))}
           </div>
