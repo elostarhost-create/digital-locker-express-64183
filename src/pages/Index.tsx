@@ -13,21 +13,27 @@ import book20 from "@/assets/book20.webp";
 import book21 from "@/assets/book21.webp";
 
 const Index = () => {
-  const accessItems = [
+  const mainProduct = [
+    {
+      icon: Headphones,
+      title: "250 AUDIOBOOKS",
+      description: "Coleção exclusiva de audiobooks de alta qualidade",
+      link: "https://drive.google.com/drive/folders/1-6gsrxIJVE9k4eEBVSWEnloFKZQ56_ap",
+      iconColor: "text-primary"
+    }
+  ];
+
+  const bonus = [
     {
       icon: BookOpen,
-      title: "ACESSO OFICIAL E VITALÍCIO – 50 MIL LIVROS",
+      title: "3500 Livros Digitais",
       description: "Biblioteca completa com milhares de títulos",
-      link: "https://drive.google.com/drive/folders/1ylrXdI_TyORQtkinHAp8T5ZbwICOP8B3",
-      iconColor: "text-primary"
-    },
-    {
-      icon: GraduationCap,
-      title: "20 MIL CURSOS (Presente Especial)",
-      description: "Cursos completos sobre os mais variados temas",
-      link: "https://mega.nz/folder/6fxBRSDD#3v-snDKSjlvpovuYpLyhYg",
+      link: "https://drive.google.com/drive/folders/1N-trluOJIJuxtyaU6jdjaJAanrDTShfD",
       iconColor: "text-secondary"
-    },
+    }
+  ];
+
+  const extras = [
     {
       icon: Zap,
       title: "Como Ler Rápido e Interpretar Melhor",
@@ -36,46 +42,63 @@ const Index = () => {
       iconColor: "text-accent"
     },
     {
+      icon: BookOpen,
+      title: "Pacotão 20.000 Livros Digitais",
+      description: "Biblioteca completa com milhares de títulos",
+      link: "https://drive.google.com/drive/folders/1ylrXdI_TyORQtkinHAp8T5ZbwICOP8B3",
+      iconColor: "text-primary"
+    },
+    {
       icon: Headphones,
-      title: "1.000 Audiobooks Exclusivos",
+      title: "Acesso Imediato a 1000 Áudio-Livros de Alta Performance",
       description: "Ouça seus livros favoritos onde quiser",
       link: "https://drive.google.com/drive/folders/1o9gj7Nxr9USR2irxKvx3g3dOKjuiSEED",
-      iconColor: "text-primary"
+      iconColor: "text-secondary"
+    }
+  ];
+
+  const gifts = [
+    {
+      icon: GraduationCap,
+      title: "20 MIL CURSOS",
+      description: "Cursos completos sobre os mais variados temas",
+      link: "https://mega.nz/folder/6fxBRSDD#3v-snDKSjlvpovuYpLyhYg",
+      iconColor: "text-accent"
     },
     {
       icon: BookMarked,
       title: "+2.000 Livros Bíblicos",
       description: "Coleção completa de literatura bíblica",
       link: "https://drive.google.com/drive/folders/1OUMEdc_GbECsw7SU4o6ja2GxhbQnCVDK",
-      iconColor: "text-secondary"
+      iconColor: "text-primary"
     },
     {
       icon: Film,
       title: "10.000 Cortes de Filmes e Séries",
       description: "Conteúdo pronto para uso em redes sociais",
       link: "https://drive.google.com/drive/folders/1BxIvXI5bEp5u_t6Dff17YAkqI_Qzl7kq",
-      iconColor: "text-accent"
+      iconColor: "text-secondary"
     },
     {
       icon: Palette,
       title: "Artes Editáveis",
       description: "Templates profissionais para suas criações",
       link: "https://drive.google.com/file/d/1wn0oPvQ8hiftSwBmLSP7_efv-p9OMEbi/view",
-      iconColor: "text-primary"
+      iconColor: "text-accent"
     },
     {
       icon: Video,
       title: "Curso de Edição de Vídeo",
       description: "Aprenda a editar vídeos profissionalmente",
       link: "https://drive.google.com/drive/folders/1iYvgAaFkZjHkBUAlilk__aSr6Y_Gnvk6",
-      iconColor: "text-secondary"
+      iconColor: "text-primary"
     },
     {
       icon: FileText,
       title: "Material para Concurseiros",
       description: "Conteúdo completo para sua aprovação",
       link: "https://drive.google.com/drive/folders/1y77LqnDnHt4mgw2dkg1AqqMIx1czv-Jg",
-      iconColor: "text-accent"
+      iconColor: "text-secondary"
     }
   ];
 
@@ -148,18 +171,78 @@ const Index = () => {
       </header>
 
       {/* Content Grid */}
-      <main className="container mx-auto px-4 py-12 sm:py-16 max-w-7xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {accessItems.map((item, index) => (
-            <div
-              key={index}
-              className="animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <AccessCard {...item} />
-            </div>
-          ))}
-        </div>
+      <main className="container mx-auto px-4 py-12 sm:py-16 max-w-7xl space-y-16">
+        {/* Produto Principal */}
+        <section>
+          <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+            🎯 Produto Principal
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {mainProduct.map((item, index) => (
+              <div
+                key={index}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <AccessCard {...item} />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Bônus */}
+        <section>
+          <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+            🎁 Bônus
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {bonus.map((item, index) => (
+              <div
+                key={index}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <AccessCard {...item} />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Produtos Extras */}
+        <section>
+          <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+            ⭐ Produtos Extras
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {extras.map((item, index) => (
+              <div
+                key={index}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <AccessCard {...item} />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Presentes */}
+        <section>
+          <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+            🎉 Presentes
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {gifts.map((item, index) => (
+              <div
+                key={index}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <AccessCard {...item} />
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
