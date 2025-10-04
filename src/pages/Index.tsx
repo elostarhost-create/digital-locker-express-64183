@@ -84,7 +84,7 @@ const Index = () => {
       {/* Hero Section */}
       <header className="relative overflow-hidden bg-foreground py-12 px-4 sm:py-16">
         {/* Book Covers Background - Messy Layout */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-30">
           <div className="relative w-full h-full">
             {[
               { src: book11, top: '5%', left: '2%', rotate: '-8deg', scale: 0.9 },
